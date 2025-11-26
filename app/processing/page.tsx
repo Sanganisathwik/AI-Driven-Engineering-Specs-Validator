@@ -1,15 +1,18 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 import { useRouter } from "next/navigation"
 import { Navigation } from "@/components/navigation"
 import { ProcessingSteps } from "@/components/processing-steps"
 import { ProcessingAnimation } from "@/components/processing-animation"
 import { Card, CardContent } from "@/components/ui/card"
+import { getAnalysisStatus } from "@/lib/api"
 
 export default function ProcessingPage() {
   const router = useRouter()
   const [fileInfo, setFileInfo] = useState<{ name: string; industry: string } | null>(null)
+  const [done, setDone] = useState(false)
+  const navigatedRef = useRef(false)
 
   useEffect(() => {
     const stored = sessionStorage.getItem("uploadedFile")
@@ -19,8 +22,48 @@ export default function ProcessingPage() {
   }, [])
 
   const handleComplete = () => {
-    router.push("/results")
+    // Only navigate if analysis completed (avoid double navigation)
+    if (done && !navigatedRef.current) {
+      navigatedRef.current = true
+      router.push("/results")
+    }
   }
+
+  useEffect(() => {
+    const storedJob = sessionStorage.getItem("analysisJob")
+    if (!storedJob) return
+
+    const { jobId } = JSON.parse(storedJob)
+    let interval: any = null
+
+    const startPolling = () => {
+      interval = setInterval(async () => {
+        try {
+          const status = await getAnalysisStatus(jobId)
+          if (status.status === "done") {
+            sessionStorage.setItem("analysisResult", JSON.stringify(status.result))
+            setDone(true)
+            if (!navigatedRef.current) {
+              navigatedRef.current = true
+              router.push("/results")
+            }
+            clearInterval(interval)
+          } else if (status.status === "failed") {
+            clearInterval(interval)
+            // TODO: show failure state
+          }
+        } catch (e) {
+          console.error(e)
+        }
+      }, 1500)
+    }
+
+    startPolling()
+
+    return () => {
+      if (interval) clearInterval(interval)
+    }
+  }, [router])
 
   return (
     <div className="min-h-screen bg-background">

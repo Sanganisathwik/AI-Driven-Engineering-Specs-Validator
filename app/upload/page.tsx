@@ -9,6 +9,7 @@ import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { ArrowRight, Info, Lightbulb, ShieldCheck, FileText } from "lucide-react"
+import { uploadDocument } from "@/lib/api"
 
 const industries = [
   { value: "oil-gas", label: "Oil & Gas" },
@@ -24,17 +25,37 @@ export default function UploadPage() {
 
   const handleAnalyze = () => {
     if (selectedFile && industry) {
-      // Store file info in sessionStorage for demo purposes
-      sessionStorage.setItem(
-        "uploadedFile",
-        JSON.stringify({
-          name: selectedFile.name,
-          size: selectedFile.size,
-          type: selectedFile.type,
-          industry: industry,
-        }),
-      )
-      router.push("/processing")
+      // Read file as base64 and upload to server
+      const reader = new FileReader()
+      reader.onload = async () => {
+        try {
+          const dataUrl = reader.result as string
+          // dataUrl is like "data:<type>;base64,<base64>"
+          const base64 = dataUrl.split(",")[1]
+          const resp = await uploadDocument({
+            name: selectedFile.name,
+            contentBase64: base64,
+            type: selectedFile.type,
+            size: selectedFile.size,
+            industry,
+          })
+
+          // save job info and file metadata for processing page
+          sessionStorage.setItem(
+            "analysisJob",
+            JSON.stringify({ jobId: resp.jobId, name: selectedFile.name, industry }),
+          )
+          sessionStorage.setItem(
+            "uploadedFile",
+            JSON.stringify({ name: selectedFile.name, size: selectedFile.size, type: selectedFile.type, industry }),
+          )
+          router.push("/processing")
+        } catch (e) {
+          // ignore for now — in prod show error
+          console.error(e)
+        }
+      }
+      reader.readAsDataURL(selectedFile as unknown as Blob)
     }
   }
 

@@ -1,0 +1,32 @@
+[00:00:01.037] Server  LOG     
+[00:00:01.038] Server  LOG        We detected TypeScript in your project and reconfigured your tsconfig.json file for you.
+[00:00:01.038] Server  LOG        The following suggested values were added to your tsconfig.json. These values can be changed to fit your project's needs:
+
+[00:00:01.038] Server  LOG        	- include was updated to add '.next/dev/types/**/*.ts'
+[00:00:01.039] Server  LOG     
+[00:00:01.039] Server  LOG        The following mandatory changes were made to your tsconfig.json:
+
+[00:00:01.039] Server  LOG        	- jsx was set to react-jsx (next.js uses the React automatic runtime)
+[00:00:01.039] Server  LOG     
+[00:00:01.269] Server  LOG      ✓ Ready in 859ms
+[00:00:08.868] Server  LOG      ○ Compiling / ...
+[00:00:11.953] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:12.319] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:12.319] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:00:12.319] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3001/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764179823055}
+[00:00:25.277] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/upload color: rgb(120, 120, 120) color: inherit {"dp":"/upload","o":"http://localhost:3001/upload","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764179835979}
+[00:02:25.023] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/history color: rgb(120, 120, 120) color: inherit {"dp":"/history","o":"http://localhost:3001/history","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764179955752}
+[00:02:38.378] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/login color: rgb(120, 120, 120) color: inherit {"dp":"/login","o":"http://localhost:3001/login","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764179969114}
+[00:02:46.468] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3001/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764179977196}
+[00:02:56.293] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/upload color: rgb(120, 120, 120) color: inherit {"dp":"/upload","o":"http://localhost:3001/upload","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764179987013}
+[00:07:45.488] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/history color: rgb(120, 120, 120) color: inherit {"dp":"/history","o":"http://localhost:3001/history","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764180276199}
+[00:07:46.826] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/upload color: rgb(120, 120, 120) color: inherit {"dp":"/upload","o":"http://localhost:3001/upload","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764180277536}
+[00:07:55.685] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3001/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764180286419}
+[00:08:08.011] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/upload color: rgb(120, 120, 120) color: inherit {"dp":"/upload","o":"http://localhost:3001/upload","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764180298734}
+[00:14:39.748] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/processing color: rgb(120, 120, 120) color: inherit {"dp":"/processing","o":"http://localhost:3001/processing","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764180690463}
+[00:14:50.323] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/results color: rgb(120, 120, 120) color: inherit {"dp":"/results","o":"http://localhost:3001/results","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764180701043}
+[00:21:45.495] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/upload color: rgb(120, 120, 120) color: inherit {"dp":"/upload","o":"http://localhost:3001/upload","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764181116197}
+[00:21:49.720] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/results color: rgb(120, 120, 120) color: inherit {"dp":"/results","o":"http://localhost:3001/results","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764181120444}
+[00:21:54.812] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/history color: rgb(120, 120, 120) color: inherit {"dp":"/history","o":"http://localhost:3001/history","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764181125522}
+[00:32:21.709] Server  LOG      ✓ Compiled in 1878ms
+[00:34:05.070] Server  LOG      ✓ Compiled in 559ms
