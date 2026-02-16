@@ -14,7 +14,7 @@ Any changes you make to your deployed app will be automatically pushed to this r
 
 Your project is live at:
 
-**[https://vercel.com/sanganisathwik26-7782s-projects/v0-engineering-document-analysis](https://vercel.com/sanganisathwik26-7782s-projects/v0-engineering-document-analysis)**
+**v0-engineering-document-analysis.vercel.app**
 
 ## Build your app
 
